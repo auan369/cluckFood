@@ -543,6 +543,7 @@ function Home(){
             
             <View style={styles.subContainer}>
                 <Text style={styles.orderText}>ORDER FOR DELIVERY!</Text>
+                
                 <View style={styles.buttonRowContainer}>
                     <Pressable style={styles.button} onPress={()=>filter("starters")}>
                         <Text style={styles.filterButtonText}>Starters</Text>
@@ -555,7 +556,7 @@ function Home(){
                     </Pressable>
                     
                 </View>
-                <View style={styles.buttonRowContainer}>
+                <View style={styles.searchRowContainer}>
                     <Pressable style={styles.searchButton} onPress={()=>filterName(search)}> 
                         <FontAwesomeIcon icon={faSearch} size={24} color="black" />
                     </Pressable>
@@ -568,7 +569,7 @@ function Home(){
                 </View>
                 
 
-                <Text style={styles.lineText}>_____________________________________________________</Text>
+                
                
             </View>
             <MenuList data={data}/>
@@ -592,6 +593,7 @@ const styles = StyleSheet.create({
     },
     infoContainer: {
         padding:10,
+        backgroundColor: '#495e57',
 
     },
     subContainer: {
@@ -613,7 +615,8 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center', 
         overflow:"visible",
-        //marginBottom:100,
+        //padding:10,
+        backgroundColor: '#F1F4F7',
     },
     profileContainer:{
         
@@ -630,7 +633,7 @@ const styles = StyleSheet.create({
         resizeMode:'contain',
     },
     titleText:{
-        color:'#40535E',
+        color:'#f4ce14',
         fontSize: 40,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
@@ -639,7 +642,7 @@ const styles = StyleSheet.create({
 
     },
     subtitleText:{
-        color:'#40535E',
+        color:'#edefee',
         fontSize: 30,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
@@ -648,7 +651,7 @@ const styles = StyleSheet.create({
 
     },
     bodytitleText:{
-        color:'#40535E',
+        color:'#edefee',
         fontSize: 17,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
@@ -676,15 +679,15 @@ const styles = StyleSheet.create({
         //backgroundColor: '#DEE3E9',
     },
     button : {
-        backgroundColor: '#CBD2D9',
+        backgroundColor: '#edefee',
         borderRadius: 10,
         width: 100,
         alignSelf: 'flex-end',
         justifyContent: 'flex-end',
-        marginRight:50,
+        margin:5,
     },
     buttonText : {
-        color : '#536674',
+        color : '#2c2c2c',
         fontSize: 25,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
@@ -701,10 +704,10 @@ const styles = StyleSheet.create({
         //margin:15,
     },
     orderText:{
-        color:'#40535E',
-        fontSize: 15,
+        color:'#333333',
+        fontSize: 25,
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-light',
+        fontFamily: 'Roboto',
         marginBottom: 5,
         
     },
@@ -746,12 +749,23 @@ const styles = StyleSheet.create({
     buttonRowContainer:{
         flexDirection:'row',
         justifyContent:"space-evenly",
+        overflow:'hidden',
+        alignContent:'center',
+        color: '#495E57',
+        fontFamily: 'sans-serif-medium',
+        fontSize: 15,
+    },
+    searchRowContainer:{
+        //backgroundColor:'#DEE3E9',
+        flexDirection:'row',
+        justifyContent:'flex-start',
         alignContent:'center',
         color: '#495E57',
         fontFamily: 'sans-serif-medium',
         fontSize: 15,
     },
     item:{
+        marginTop:10,
         marginLeft:10,
         marginRight:10,
         //flexDirection:'row',
