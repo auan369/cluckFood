@@ -22,8 +22,9 @@ function CustomHeader({ title, image, firstName, lastName}) {
     };
 
     const renderProfileImage = () => {
+        
         // Check if the user has an image or not
-        if (image) {
+        if (image && image.length > 0) {
           return (
             <Image
               source={{ uri: image }}
@@ -76,7 +77,7 @@ function CustomHeader({ title, image, firstName, lastName}) {
         
                 <FontAwesomeIcon icon={faChevronLeft} size={24} color="black" />
             </Pressable>
-            <Image source={require('../assets/icon.png')} style={{ width: 60, height: 60 }} />
+            <Image source={require('../assets/icon.png')} style={{ height: 60, resizeMode:'contain'}} />
             {renderProfileImage()}
     </View>
     );
@@ -92,9 +93,9 @@ function Profile(){
     const navigation = useNavigation();
 
 
-    const updatePreferences = async (email,firstName, lastName, phone) => {
+    const updatePreferences = async (email,firstName, lastName, phone, image) => {
         try {
-            const jsonValue = JSON.stringify({email: email, firstName: firstName, lastName: lastName, phone: phone, notifCheckboxState: notifCheckboxState})
+            const jsonValue = JSON.stringify({email: email, firstName: firstName, lastName: lastName, phone: phone, notifCheckboxState: notifCheckboxState, image:image})
             await AsyncStorage.setItem("userToken", jsonValue)
             console.log(jsonValue)
             
@@ -143,8 +144,31 @@ function Profile(){
           // Retrieve the user's authentication status from AsyncStorage
             let userToken = await AsyncStorage.getItem('userToken');
             userToken = JSON.parse(userToken);
-            setEmail(userToken.email);
-            setFirstName(userToken.firstName);
+            
+            //setEmail(userToken.email);
+            if(userToken.email != null){
+                setEmail(userToken.email);
+            }
+            //setFirstName(userToken.firstName);
+            if(userToken.firstName != null){
+                setFirstName(userToken.firstName);
+            }
+            if(userToken.lastName != null){
+                setLastName(userToken.lastName);
+            }
+            if(userToken.phone != null){
+                setPhone(userToken.phone);
+            }
+            if(userToken.notifCheckboxState != null){
+                setNotifCheckboxState(userToken.notifCheckboxState);
+            }
+            if(userToken.image != null){
+                setImage(userToken.image);
+            }
+            //setLastName(userToken.lastName);
+            //setPhone(userToken.phone);
+            //setNotifCheckboxState(userToken.notifCheckboxState);
+            //setImage(userToken.image);
         } catch (error) {
           console.error('Error checking login status:', error);
         }
@@ -168,7 +192,7 @@ function Profile(){
     }
 
     function saveChanges(){
-        updatePreferences(email,firstName,lastName,phone);
+        updatePreferences(email,firstName,lastName,phone,image);
     }
 
     function logout(){
@@ -178,7 +202,7 @@ function Profile(){
         setPhone('');
         setNotifCheckboxState(false);
         AsyncStorage.removeItem('userToken');
-        navigation.navigate('Login');
+        navigation.navigate('Onboarding');
     }
 
     return(

@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Onboarding from './screens/Onboarding';
 import Profile from './screens/Profile';
 import SplashScreen from './screens/Splashscreen';
-
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -79,8 +79,9 @@ function App() {
       {isLoggedIn ?
       (<NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
           <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
-          <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }}/>
+          <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false, onDone:onDone}}/>
         </Stack.Navigator>
       </NavigationContainer>) : <Onboarding onDone={onDone}/>
       }

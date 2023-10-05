@@ -25,7 +25,13 @@
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
     "react-native-svg": "13.9.0",
-    "validator": "^13.11.0"
+    "validator": "^13.11.0",
+    "expo-sqlite": "~11.3.3",
+    "expo-file-system": "~15.4.4",
+    "expo-asset": "~8.10.1",
+    "react-native-web": "~0.19.6",
+    "react-dom": "18.2.0",
+    "@expo/webpack-config": "^19.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
