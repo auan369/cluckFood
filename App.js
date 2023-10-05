@@ -25,6 +25,17 @@ function App() {
   //   checkLoginStatus();
   //   isInitialMount.current = false;
   // },[]); 
+  useEffect(() => {
+    // Check if the user is logged in
+    checkLoginStatus();
+    console.log(isLoggedIn)
+    if (isInitialMount.current){
+      isInitialMount.current = false;
+    }
+    else{
+      checkLoginStatus();
+    }
+  }, []); 
 
   useEffect(() => {
     // Check if the user is logged in

@@ -11,6 +11,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import {Restart} from 'fiction-expo-restart';
 
 
 
@@ -202,7 +203,9 @@ function Profile(){
         setPhone('');
         setNotifCheckboxState(false);
         AsyncStorage.removeItem('userToken');
-        navigation.navigate('Onboarding');
+        //navigation.navigate('Onboarding');
+        //Restart( );
+        
     }
 
     return(
