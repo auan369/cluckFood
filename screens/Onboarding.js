@@ -8,11 +8,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 
-function Onboarding({onDone}) {
+function Onboarding({ navigation, route }) {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [emailLegit, setEmailLegit] = useState(false);
     const [nameLegit, setNameLegit] = useState(false);
+    //const navigation = useNavigation();
 
     const updatePreferences = async (email,firstName) => {
         try {
@@ -48,7 +49,10 @@ function Onboarding({onDone}) {
 
     function buttonPress(){
         updatePreferences(email,firstName);
-        onDone();
+        //onDone();
+        route.params.setState(true);
+        
+        //navigation.navigate('Home');
     }
     return (
       <View style={styles.bodyContainer}>
@@ -78,7 +82,7 @@ function Onboarding({onDone}) {
         <View style={styles.bottomContainer}>
             
             {emailLegit&&nameLegit ? (
-            <Pressable style={styles.button} onPress={buttonPress}>
+            <Pressable style={styles.button} onPress={() => buttonPress()}>
                 <View>
                     <Text style={styles.buttonText}>
                         Next

@@ -84,14 +84,14 @@ function CustomHeader({ title, image, firstName, lastName}) {
     );
 }
 
-function Profile(){
+function Profile({ navigation, route }){
     const [image, setImage] = useState(null);
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phone, setPhone] = useState('');
     const [notifCheckboxState, setNotifCheckboxState] = useState(false);
-    const navigation = useNavigation();
+    //const navigation = useNavigation();
 
 
     const updatePreferences = async (email,firstName, lastName, phone, image) => {
@@ -203,6 +203,8 @@ function Profile(){
         setPhone('');
         setNotifCheckboxState(false);
         AsyncStorage.removeItem('userToken');
+        //route.params.setIsLoggedIn(false);
+        route.params.setState(false);
         //navigation.navigate('Onboarding');
         //Restart( );
         

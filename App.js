@@ -13,7 +13,7 @@ import Home from './screens/Home';
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isInitialMount = useRef(true);
 
   const onDone = () => {
@@ -84,7 +84,7 @@ function App() {
               headerShown: false}}
           />
   */
-  
+  /*
   return (
     <>
       {isLoggedIn ?
@@ -97,6 +97,24 @@ function App() {
       </NavigationContainer>) : <Onboarding onDone={onDone}/>
       }
     </>
+  );
+  */
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {isLoggedIn ?(
+        <>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Profile" component={Profile} initialParams={{ setState: setIsLoggedIn}}/> 
+        </> 
+      ) : (
+        <>
+          <Stack.Screen name="Onboarding" component={Onboarding} initialParams={{ setState: setIsLoggedIn}}/>
+        </>
+      )}
+        
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
