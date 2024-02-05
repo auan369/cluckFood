@@ -10,3 +10,19 @@ This repo contains the source code for my Capstone Project in the Meta React Nat
 
 ## Home Screen
 ![Onboarding](https://github.com/auan369/cluckFood/blob/master/screenshots/HomeScreen.png)
+
+
+## UI/UX Wireframes and Prototypes
+Here are the wireframes, prototypes, user journey map and persona that I created and utilised in creating this application.
+
+### Wireframe
+![Wireframe](https://github.com/auan369/cluckFood/blob/master/sample_wireframe_prototype/Wireframe.png)
+
+### Prototype
+![Prototype](https://github.com/auan369/cluckFood/blob/master/sample_wireframe_prototype/Prototype.png)
+
+### User Journey Map
+![User Journey Map](https://github.com/auan369/cluckFood/blob/master/sample_wireframe_prototype/UserJourneyMap.png)
+
+### Persona
+![Persona](https://github.com/auan369/cluckFood/blob/master/sample_wireframe_prototype/Persona.png)
