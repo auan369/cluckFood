@@ -3,8 +3,7 @@
 This repo contains the source code for my Capstone Project in the Meta React Native specialisation. Images of the screens in the app can be seen below.
 
 ## Overall Application
-![Overall]
-(https://github.com/auan369/cluckFood/blob/master/sample_wireframe_prototype/cluckFood.gif)
+![Overall](https://github.com/auan369/cluckFood/blob/master/sample_wireframe_prototype/cluckFood.gif)
 
 ## Onboarding Screen
 ![Onboarding](https://github.com/auan369/cluckFood/blob/master/screenshots/OnboardingScreen.png)
